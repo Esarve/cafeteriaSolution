@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="592.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Pane prefHeight="592.0" prefWidth="890.0" style="-fx-background-color: #263238;">
+         <children>
+            <VBox layoutX="270.0" layoutY="327.0" prefHeight="234.0" prefWidth="351.0">
+               <children>
+                  <JFXTextField focusColor="#c3c3c3" labelFloat="true" promptText="USERNAME" style="-fx-text-inner-color: #e86363;" unFocusColor="#c3c3c3">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXPasswordField focusColor="#c3c3c3" labelFloat="true" promptText="PASSWORD" style="-fx-text-inner-color: #e86363;" unFocusColor="#c3c3c3">
+                     <VBox.margin>
+                        <Insets top="60.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </JFXPasswordField>
+                  <JFXButton contentDisplay="BOTTOM" defaultButton="true" prefHeight="49.0" prefWidth="84.0" ripplerFill="#e86363" style="-fx-background-color: #c3c3c3;" text="LOGIN" textFill="#263238">
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </VBox>
+            <Pane layoutX="299.0" layoutY="35.0" prefHeight="200.0" prefWidth="294.0">
+               <children>
+                  <Label layoutX="19.0" prefHeight="70.0" prefWidth="308.0" text="CAFETERIA" textAlignment="CENTER" textFill="#e86363">
+                     <font>
+                        <Font name="Segoe UI Black" size="48.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="55.0" prefHeight="70.0" prefWidth="317.0" text="SOLUTION" textAlignment="CENTER" textFill="#c3c3c3">
+                     <font>
+                        <Font name="Segoe UI Black" size="48.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children></Pane>
+   </children>
+</AnchorPane>
