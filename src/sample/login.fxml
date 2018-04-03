@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="592.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="592.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LoginController">
    <children>
       <Pane prefHeight="592.0" prefWidth="890.0" style="-fx-background-color: #263238;">
          <children>
@@ -29,7 +29,7 @@
                         <Font size="18.0" />
                      </font>
                   </JFXPasswordField>
-                  <JFXButton contentDisplay="BOTTOM" defaultButton="true" prefHeight="49.0" prefWidth="84.0" ripplerFill="#e86363" style="-fx-background-color: #c3c3c3;" text="LOGIN" textFill="#263238">
+                  <JFXButton contentDisplay="BOTTOM" defaultButton="true" onAction="#openMainPanel" prefHeight="49.0" prefWidth="84.0" ripplerFill="#e86363" style="-fx-background-color: #c3c3c3;" text="LOGIN" textFill="#263238">
                      <VBox.margin>
                         <Insets top="30.0" />
                      </VBox.margin>
