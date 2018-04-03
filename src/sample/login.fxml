@@ -12,7 +12,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="592.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LoginController">
    <children>
-      <Pane prefHeight="592.0" prefWidth="890.0" style="-fx-background-color: #263238;">
+      <Pane prefHeight="592.0" prefWidth="890.0" style="-fx-background-color: #333333;">
          <children>
             <VBox layoutX="270.0" layoutY="327.0" prefHeight="234.0" prefWidth="351.0">
                <children>
