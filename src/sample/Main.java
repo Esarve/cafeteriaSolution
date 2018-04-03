@@ -20,7 +20,6 @@ public class Main extends Application {
         parentWindow = primaryStage;
         loadScene(Main.loginPanel);
         primaryStage.setTitle("Cafeteria Solution");
-//        primaryStage.setScene(new Scene(scene1));
         primaryStage.setResizable(false);
         primaryStage.show();
     }
@@ -36,7 +35,4 @@ public class Main extends Application {
         parentWindow.setScene(newScene);
     }
 
-    public void disableMainPanel() throws IOException {
-
-    }
 }
