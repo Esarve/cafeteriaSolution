@@ -407,7 +407,7 @@
                   <Insets left="16.0" />
                </padding>
             </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="57.0" prefWidth="186.0" style="-fx-background-color: #444444;">
+            <HBox alignment="CENTER_LEFT" onMouseClicked="#openSuppliers" prefHeight="57.0" prefWidth="186.0" style="-fx-background-color: #444444;">
                <children>
                   <ImageView fitHeight="25.0" fitWidth="25.0" opacity="0.68" pickOnBounds="true" preserveRatio="true">
                      <image>

@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="592.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ItemList">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="592.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Suppliers">
    <children>
       <Pane prefHeight="592.0" prefWidth="890.0" style="-fx-background-color: #e0e0e0;">
          <children>
@@ -20,7 +20,7 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="57.0" prefWidth="186.0" style="-fx-background-color: #e86363;">
                      <children>
-                        <Label text="Items" textAlignment="CENTER" textFill="#e0e0e0">
+                        <Label text="Suppliers" textAlignment="CENTER" textFill="#e0e0e0">
                            <font>
                               <Font name="Segoe UI Bold" size="18.0" />
                            </font>
@@ -56,7 +56,7 @@
                         <Insets left="16.0" />
                      </padding>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="57.0" prefWidth="186.0" style="-fx-background-color: #222222;">
+                  <HBox alignment="CENTER_LEFT" onMouseClicked="#openItemList" prefHeight="57.0" prefWidth="186.0" style="-fx-background-color: #444444;">
                      <children>
                         <ImageView fitHeight="25.0" fitWidth="25.0" opacity="0.68" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -79,7 +79,7 @@
                         <Insets left="16.0" />
                      </padding>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" onMouseClicked="#openSuppliers" prefHeight="57.0" prefWidth="186.0" style="-fx-background-color: #444444;">
+                  <HBox alignment="CENTER_LEFT" prefHeight="57.0" prefWidth="186.0" style="-fx-background-color: #222222;">
                      <children>
                         <ImageView fitHeight="25.0" fitWidth="25.0" opacity="0.68" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -171,7 +171,7 @@
                         <Insets left="16.0" />
                      </padding>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #444444;">
+                  <HBox alignment="CENTER_LEFT" onMouseDragged="#openLoginPanel" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #444444;">
                      <children>
                         <ImageView fitHeight="24.0" fitWidth="25.0" opacity="0.68" pickOnBounds="true" preserveRatio="true">
                            <image>

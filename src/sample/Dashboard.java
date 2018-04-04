@@ -8,13 +8,20 @@ import java.io.IOException;
 
 public class Dashboard {
 
+    Main accessMain = new Main();
+
     @FXML
     void openLoginPanel(MouseEvent event) throws IOException {
-        new Main().loadScene(Main.loginPanel);
+        accessMain.loadScene(Main.loginPanel);
     }
 
     @FXML
     void openItemPanel(MouseEvent event) throws IOException {
-        new Main().loadScene(Main.itemPanel);
+        accessMain.loadScene(Main.itemPanel);
+    }
+
+    @FXML
+    void openSuppliers(MouseEvent event) throws IOException{
+        accessMain.loadScene(Main.suppliersPanel);
     }
 }
