@@ -15,11 +15,11 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="592.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Dashboard">
    <children>
-      <Pane prefHeight="592.0" prefWidth="890.0" style="-fx-background-color: #e0e0e0;">
+      <Pane prefHeight="592.0" prefWidth="890.0" style="-fx-background-color: #FCFCFC;">
          <children>
-            <VBox alignment="CENTER_LEFT" layoutX="218.0" layoutY="18.0" prefHeight="542.0" prefWidth="364.0" style="-fx-border-color: #BDBDBD;">
+            <VBox alignment="CENTER" layoutX="236.0" layoutY="62.0" prefHeight="468.0" prefWidth="364.0" style="-fx-border-color: #BDBDBD;">
                <children>
-                  <HBox alignment="CENTER" prefHeight="34.0" prefWidth="352.0" spacing="110.0">
+                  <HBox alignment="CENTER" prefHeight="28.0" prefWidth="362.0" spacing="110.0">
                      <children>
                         <Label prefHeight="18.0" prefWidth="29.0" text="Item">
                            <font>
@@ -36,7 +36,7 @@
                         </Label>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="33.0" prefWidth="362.0" style="-fx-background-color: #EEEEEE;">
+                  <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="362.0" style="-fx-background-color: #EEEEEE;">
                      <VBox.margin>
                         <Insets top="5.0" />
                      </VBox.margin>
@@ -58,7 +58,7 @@
                         </JFXComboBox>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="33.0" prefWidth="362.0">
+                  <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="362.0">
                      <VBox.margin>
                         <Insets top="5.0" />
                      </VBox.margin>
@@ -80,7 +80,7 @@
                         </JFXComboBox>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="33.0" prefWidth="362.0" style="-fx-background-color: #EEEEEE;">
+                  <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="362.0" style="-fx-background-color: #EEEEEE;">
                      <VBox.margin>
                         <Insets top="5.0" />
                      </VBox.margin>
@@ -102,7 +102,7 @@
                         </JFXComboBox>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="33.0" prefWidth="362.0">
+                  <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="362.0">
                      <VBox.margin>
                         <Insets top="5.0" />
                      </VBox.margin>
@@ -124,7 +124,7 @@
                         </JFXComboBox>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="33.0" prefWidth="362.0" style="-fx-background-color: #EEEEEE;">
+                  <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="362.0" style="-fx-background-color: #EEEEEE;">
                      <VBox.margin>
                         <Insets top="5.0" />
                      </VBox.margin>
@@ -146,7 +146,7 @@
                         </JFXComboBox>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="33.0" prefWidth="362.0">
+                  <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="362.0">
                      <VBox.margin>
                         <Insets top="5.0" />
                      </VBox.margin>
@@ -168,7 +168,7 @@
                         </JFXComboBox>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="33.0" prefWidth="362.0" style="-fx-background-color: #EEEEEE;">
+                  <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="362.0" style="-fx-background-color: #EEEEEE;">
                      <VBox.margin>
                         <Insets top="5.0" />
                      </VBox.margin>
@@ -190,7 +190,7 @@
                         </JFXComboBox>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="33.0" prefWidth="362.0">
+                  <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="362.0">
                      <VBox.margin>
                         <Insets top="5.0" />
                      </VBox.margin>
@@ -212,7 +212,7 @@
                         </JFXComboBox>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="33.0" prefWidth="362.0" style="-fx-background-color: #EEEEEE;">
+                  <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="362.0" style="-fx-background-color: #EEEEEE;">
                      <VBox.margin>
                         <Insets top="5.0" />
                      </VBox.margin>
@@ -234,7 +234,7 @@
                         </JFXComboBox>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="33.0" prefWidth="362.0">
+                  <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="362.0">
                      <VBox.margin>
                         <Insets top="5.0" />
                      </VBox.margin>
@@ -256,74 +256,8 @@
                         </JFXComboBox>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="33.0" prefWidth="362.0" style="-fx-background-color: #EEEEEE;">
-                     <VBox.margin>
-                        <Insets top="5.0" />
-                     </VBox.margin>
-                     <children>
-                        <JFXCheckBox prefWidth="20.0" text="11.">
-                           <HBox.margin>
-                              <Insets left="10.0" />
-                           </HBox.margin>
-                        </JFXCheckBox>
-                        <JFXComboBox prefHeight="25.0" prefWidth="102.0">
-                           <HBox.margin>
-                              <Insets left="10.0" />
-                           </HBox.margin>
-                        </JFXComboBox>
-                        <JFXComboBox prefHeight="25.0" prefWidth="37.0">
-                           <HBox.margin>
-                              <Insets left="68.0" />
-                           </HBox.margin>
-                        </JFXComboBox>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="33.0" prefWidth="362.0">
-                     <VBox.margin>
-                        <Insets top="5.0" />
-                     </VBox.margin>
-                     <children>
-                        <JFXCheckBox prefWidth="20.0" text="12.">
-                           <HBox.margin>
-                              <Insets left="10.0" />
-                           </HBox.margin>
-                        </JFXCheckBox>
-                        <JFXComboBox prefHeight="25.0" prefWidth="102.0">
-                           <HBox.margin>
-                              <Insets left="10.0" />
-                           </HBox.margin>
-                        </JFXComboBox>
-                        <JFXComboBox prefHeight="25.0" prefWidth="37.0">
-                           <HBox.margin>
-                              <Insets left="68.0" />
-                           </HBox.margin>
-                        </JFXComboBox>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="33.0" prefWidth="362.0" style="-fx-background-color: #EEEEEE;">
-                     <VBox.margin>
-                        <Insets top="5.0" />
-                     </VBox.margin>
-                     <children>
-                        <JFXCheckBox prefWidth="20.0" text="13.">
-                           <HBox.margin>
-                              <Insets left="10.0" />
-                           </HBox.margin>
-                        </JFXCheckBox>
-                        <JFXComboBox prefHeight="25.0" prefWidth="102.0">
-                           <HBox.margin>
-                              <Insets left="10.0" />
-                           </HBox.margin>
-                        </JFXComboBox>
-                        <JFXComboBox prefHeight="25.0" prefWidth="37.0">
-                           <HBox.margin>
-                              <Insets left="68.0" />
-                           </HBox.margin>
-                        </JFXComboBox>
-                     </children>
-                  </HBox>
                </children></VBox>
-            <VBox alignment="CENTER" layoutX="669.0" layoutY="132.0" prefHeight="200.0" prefWidth="186.0" spacing="50.0" style="-fx-border-color: #BDBDBD;">
+            <VBox alignment="CENTER" layoutX="670.0" layoutY="197.0" prefHeight="200.0" prefWidth="186.0" spacing="50.0" style="-fx-border-color: #BDBDBD;">
                <children>
                   <Label text="TOTAL BILL">
                      <font>
@@ -337,7 +271,7 @@
                   </Label>
                </children>
             </VBox>
-            <JFXButton layoutX="699.0" layoutY="387.0" prefHeight="44.0" prefWidth="127.0" style="-fx-background-color: #e86363;" text="Place Order" textFill="WHITE">
+            <JFXButton layoutX="699.0" layoutY="460.0" prefHeight="44.0" prefWidth="127.0" style="-fx-background-color: #e86363;" text="Place Order" textFill="WHITE">
                <font>
                   <Font name="Segoe UI Black" size="18.0" />
                </font>
@@ -358,12 +292,12 @@
                   </Label>
                </children>
                <VBox.margin>
-                  <Insets bottom="70.0" />
+                  <Insets />
                </VBox.margin>
             </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="57.0" prefWidth="186.0" style="-fx-background-color: #222222;">
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="186.0" style="-fx-background-color: #222222;">
                <children>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" opacity="0.68" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="20.0" fitWidth="20.0" opacity="0.68" pickOnBounds="true" preserveRatio="true">
                      <HBox.margin>
                         <Insets right="10.0" />
                      </HBox.margin>
@@ -373,20 +307,20 @@
                   </ImageView>
                   <Label text="Order" textAlignment="CENTER" textFill="#e0e0e0">
                      <font>
-                        <Font name="Segoe UI" size="18.0" />
+                        <Font name="Segoe UI" size="15.0" />
                      </font>
                   </Label>
                </children>
                <VBox.margin>
-                  <Insets />
+                  <Insets top="97.0" />
                </VBox.margin>
                <padding>
                   <Insets left="16.0" />
                </padding>
             </HBox>
-            <HBox alignment="CENTER_LEFT" onMouseClicked="#openItemPanel" prefHeight="57.0" prefWidth="186.0" style="-fx-background-color: #444444;">
+            <HBox alignment="CENTER_LEFT" onMouseClicked="#openItemPanel" prefHeight="50.0" prefWidth="186.0" style="-fx-background-color: #444444;">
                <children>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" opacity="0.68" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="20.0" fitWidth="20.0" opacity="0.68" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@res/list.png" />
                      </image>
@@ -396,7 +330,7 @@
                   </ImageView>
                   <Label text="Available Items" textAlignment="CENTER" textFill="#e0e0e0">
                      <font>
-                        <Font name="Segoe UI" size="18.0" />
+                        <Font name="Segoe UI" size="15.0" />
                      </font>
                   </Label>
                </children>
@@ -407,9 +341,9 @@
                   <Insets left="16.0" />
                </padding>
             </HBox>
-            <HBox alignment="CENTER_LEFT" onMouseClicked="#openSuppliers" prefHeight="57.0" prefWidth="186.0" style="-fx-background-color: #444444;">
+            <HBox alignment="CENTER_LEFT" onMouseClicked="#openSuppliers" prefHeight="50.0" prefWidth="186.0" style="-fx-background-color: #444444;">
                <children>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" opacity="0.68" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="20.0" fitWidth="20.0" opacity="0.68" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@res/group.png" />
                      </image>
@@ -419,7 +353,7 @@
                   </ImageView>
                   <Label text="Suppliers" textAlignment="CENTER" textFill="#e0e0e0">
                      <font>
-                        <Font name="Segoe UI" size="18.0" />
+                        <Font name="Segoe UI" size="15.0" />
                      </font>
                   </Label>
                </children>
@@ -430,9 +364,9 @@
                   <Insets left="16.0" />
                </padding>
             </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="57.0" prefWidth="186.0" style="-fx-background-color: #444444;">
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="186.0" style="-fx-background-color: #444444;">
                <children>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" opacity="0.68" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="20.0" fitWidth="20.0" opacity="0.68" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@res/close.png" />
                      </image>
@@ -442,7 +376,7 @@
                   </ImageView>
                   <Label text="Expired items" textAlignment="CENTER" textFill="#e0e0e0">
                      <font>
-                        <Font name="Segoe UI" size="18.0" />
+                        <Font name="Segoe UI" size="15.0" />
                      </font>
                   </Label>
                </children>
@@ -453,9 +387,9 @@
                   <Insets left="16.0" />
                </padding>
             </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="57.0" prefWidth="186.0" style="-fx-background-color: #444444;">
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="186.0" style="-fx-background-color: #444444;">
                <children>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" opacity="0.68" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="20.0" fitWidth="20.0" opacity="0.68" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@res/wrench.png" />
                      </image>
@@ -465,7 +399,7 @@
                   </ImageView>
                   <Label text="Modify" textAlignment="CENTER" textFill="#e0e0e0">
                      <font>
-                        <Font name="Segoe UI" size="18.0" />
+                        <Font name="Segoe UI" size="15.0" />
                      </font>
                   </Label>
                </children>
@@ -476,9 +410,9 @@
                   <Insets left="16.0" />
                </padding>
             </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="57.0" prefWidth="186.0" style="-fx-background-color: #444444;">
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="186.0" style="-fx-background-color: #444444;">
                <children>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" opacity="0.68" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="20.0" fitWidth="20.0" opacity="0.68" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@res/wallet.png" />
                      </image>
@@ -488,12 +422,12 @@
                   </ImageView>
                   <Label text="Daily Sells " textAlignment="CENTER" textFill="#e0e0e0">
                      <font>
-                        <Font name="Segoe UI" size="18.0" />
+                        <Font name="Segoe UI" size="15.0" />
                      </font>
                   </Label>
                </children>
                <VBox.margin>
-                  <Insets />
+                  <Insets bottom="97.0" />
                </VBox.margin>
                <padding>
                   <Insets left="16.0" />
@@ -501,7 +435,7 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" onMouseClicked="#openLoginPanel" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #444444;">
                <children>
-                  <ImageView fitHeight="24.0" fitWidth="25.0" opacity="0.68" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="20.0" fitWidth="20.0" opacity="0.68" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@res/power-button.png" />
                      </image>
@@ -511,7 +445,7 @@
                   </ImageView>
                   <Label text="Log Out" textAlignment="CENTER" textFill="#e0e0e0">
                      <font>
-                        <Font name="Segoe UI" size="18.0" />
+                        <Font name="Segoe UI" size="15.0" />
                      </font>
                   </Label>
                </children>
@@ -519,7 +453,7 @@
                   <Insets left="16.0" />
                </padding>
                <VBox.margin>
-                  <Insets top="81.0" />
+                  <Insets />
                </VBox.margin>
             </HBox>
          </children>
