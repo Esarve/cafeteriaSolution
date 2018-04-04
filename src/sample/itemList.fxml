@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="592.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ItemList">
+   <children>
+      <Pane prefHeight="592.0" prefWidth="890.0" style="-fx-background-color: #e0e0e0;">
+         <children>
+            <TableView layoutX="253.0" layoutY="32.0" prefHeight="529.0" prefWidth="595.0" />
+            <VBox prefHeight="592.0" prefWidth="186.0" style="-fx-background-color: #333333;">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="57.0" prefWidth="186.0" style="-fx-background-color: #e86363;">
+                     <children>
+                        <Label text="Dashboard" textAlignment="CENTER" textFill="#e0e0e0">
+                           <font>
+                              <Font name="Segoe UI Bold" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="70.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" onMouseClicked="#openDashboard" prefHeight="57.0" prefWidth="186.0" style="-fx-background-color: #444444;">
+                     <children>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" opacity="0.68" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@res/document-4.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label text="Order" textAlignment="CENTER" textFill="#e0e0e0">
+                           <font>
+                              <Font name="Segoe UI" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="16.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="57.0" prefWidth="186.0" style="-fx-background-color: #222222;">
+                     <children>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" opacity="0.68" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@res/list.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label text="Available Items" textAlignment="CENTER" textFill="#e0e0e0">
+                           <font>
+                              <Font name="Segoe UI" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="16.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="57.0" prefWidth="186.0" style="-fx-background-color: #444444;">
+                     <children>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" opacity="0.68" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@res/group.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label text="Suppliers" textAlignment="CENTER" textFill="#e0e0e0">
+                           <font>
+                              <Font name="Segoe UI" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="16.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="57.0" prefWidth="186.0" style="-fx-background-color: #444444;">
+                     <children>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" opacity="0.68" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@res/close.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label text="Expired items" textAlignment="CENTER" textFill="#e0e0e0">
+                           <font>
+                              <Font name="Segoe UI" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="16.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="57.0" prefWidth="186.0" style="-fx-background-color: #444444;">
+                     <children>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" opacity="0.68" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@res/wrench.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label text="Modify" textAlignment="CENTER" textFill="#e0e0e0">
+                           <font>
+                              <Font name="Segoe UI" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="16.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="57.0" prefWidth="186.0" style="-fx-background-color: #444444;">
+                     <children>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" opacity="0.68" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@res/wallet.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label text="Daily Sells " textAlignment="CENTER" textFill="#e0e0e0">
+                           <font>
+                              <Font name="Segoe UI" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="16.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #444444;">
+                     <children>
+                        <ImageView fitHeight="24.0" fitWidth="25.0" opacity="0.68" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@res/power-button.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label text="Log Out" textAlignment="CENTER" textFill="#e0e0e0">
+                           <font>
+                              <Font name="Segoe UI" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets left="16.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets top="81.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
