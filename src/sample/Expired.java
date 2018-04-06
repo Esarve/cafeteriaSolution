@@ -5,7 +5,7 @@ import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 
-public class ItemList {
+public class Expired {
 
     Main accessMain = new Main();
 
@@ -14,15 +14,19 @@ public class ItemList {
         accessMain.loadScene(Main.mainPanel);
     }
 
-
     @FXML
-    void openSuppliers(MouseEvent event) throws IOException{
-        accessMain.loadScene(Main.suppliersPanel);
+    void openItemList(MouseEvent event) throws IOException {
+        accessMain.loadScene(Main.itemPanel);
     }
 
     @FXML
-    void openExpired(MouseEvent event) throws IOException{
-        accessMain.loadScene(Main.expiredPanel);
+    void openLoginPanel(MouseEvent event) throws IOException {
+        accessMain.loadScene(Main.loginPanel);
+    }
+
+    @FXML
+    void openSuppliers(MouseEvent event) throws IOException {
+        accessMain.loadScene(Main.suppliersPanel);
     }
 
     @FXML
@@ -35,8 +39,4 @@ public class ItemList {
         accessMain.loadScene(Main.salesPanel);
     }
 
-    @FXML
-    void openLoginPanel(MouseEvent event) throws IOException {
-        accessMain.loadScene(Main.loginPanel);
-    }
 }

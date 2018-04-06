@@ -15,6 +15,11 @@ public class Main extends Application {
     public static final String mainPanel= "dashboard.fxml";
     public static final String itemPanel= "itemList.fxml";
     public static final String suppliersPanel= "suppliers.fxml";
+    public static final String expiredPanel = "expired.fxml";
+    public static final String modifyPanel = "modify.fxml";
+    public static final String salesPanel = "sales.fxml";
+
+
     public static Stage parentWindow;
 
     @Override

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableView?>
@@ -11,16 +12,15 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="592.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Suppliers">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="592.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Sales">
    <children>
       <Pane prefHeight="592.0" prefWidth="890.0" style="-fx-background-color: #FCFCFC;">
          <children>
-            <TableView layoutX="253.0" layoutY="32.0" prefHeight="529.0" prefWidth="595.0" />
             <VBox prefHeight="592.0" prefWidth="186.0" style="-fx-background-color: #333333;">
                <children>
                   <HBox alignment="CENTER" prefHeight="57.0" prefWidth="186.0" style="-fx-background-color: #e86363;">
                      <children>
-                        <Label text="Suppliers" textAlignment="CENTER" textFill="#e0e0e0">
+                        <Label text="Daily Sales" textAlignment="CENTER" textFill="#e0e0e0">
                            <font>
                               <Font name="Segoe UI Bold" size="18.0" />
                            </font>
@@ -79,7 +79,7 @@
                         <Insets left="16.0" />
                      </padding>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="186.0" style="-fx-background-color: #222222;">
+                  <HBox alignment="CENTER_LEFT" onMouseClicked="#openSuppliers" prefHeight="50.0" prefWidth="186.0" style="-fx-background-color: #444444;">
                      <children>
                         <ImageView fitHeight="25.0" fitWidth="20.0" opacity="0.68" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -148,7 +148,7 @@
                         <Insets left="16.0" />
                      </padding>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" onMouseClicked="#openSales" prefHeight="50.0" prefWidth="186.0" style="-fx-background-color: #444444;">
+                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="186.0" style="-fx-background-color: #222222;">
                      <children>
                         <ImageView fitHeight="25.0" fitWidth="20.0" opacity="0.68" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -158,7 +158,7 @@
                               <Insets right="10.0" />
                            </HBox.margin>
                         </ImageView>
-                        <Label text="Daily Sells " textAlignment="CENTER" textFill="#e0e0e0">
+                        <Label text="Daily Sales" textAlignment="CENTER" textFill="#e0e0e0">
                            <font>
                               <Font name="Segoe UI" size="15.0" />
                            </font>
@@ -194,6 +194,21 @@
                         <Insets />
                      </VBox.margin>
                   </HBox>
+               </children>
+            </VBox>
+            <TableView layoutX="269.0" layoutY="46.0" prefHeight="501.0" prefWidth="352.0" />
+            <VBox alignment="CENTER" layoutX="726.0" layoutY="196.0" prefHeight="200.0" prefWidth="100.0" spacing="100.0">
+               <children>
+                  <JFXButton prefHeight="42.0" prefWidth="89.0" style="-fx-background-color: #e86363;" text="EXPORT" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Bold" size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton prefHeight="42.0" prefWidth="89.0" style="-fx-background-color: #e86363;" text="RESET" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Bold" size="14.0" />
+                     </font>
+                  </JFXButton>
                </children>
             </VBox>
          </children>

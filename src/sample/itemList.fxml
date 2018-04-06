@@ -102,7 +102,7 @@
                         <Insets left="16.0" />
                      </padding>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="186.0" style="-fx-background-color: #444444;">
+                  <HBox alignment="CENTER_LEFT" onMouseClicked="#openExpired" prefHeight="50.0" prefWidth="186.0" style="-fx-background-color: #444444;">
                      <children>
                         <ImageView fitHeight="20.0" fitWidth="20.0" opacity="0.68" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -125,7 +125,7 @@
                         <Insets left="16.0" />
                      </padding>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="186.0" style="-fx-background-color: #444444;">
+                  <HBox alignment="CENTER_LEFT" onMouseClicked="#openModify" prefHeight="50.0" prefWidth="186.0" style="-fx-background-color: #444444;">
                      <children>
                         <ImageView fitHeight="20.0" fitWidth="20.0" opacity="0.68" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -148,7 +148,7 @@
                         <Insets left="16.0" />
                      </padding>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="186.0" style="-fx-background-color: #444444;">
+                  <HBox alignment="CENTER_LEFT" onMouseClicked="#openSales" prefHeight="50.0" prefWidth="186.0" style="-fx-background-color: #444444;">
                      <children>
                         <ImageView fitHeight="20.0" fitWidth="20.0" opacity="0.68" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -171,7 +171,7 @@
                         <Insets left="16.0" />
                      </padding>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #444444;">
+                  <HBox alignment="CENTER_LEFT" onMouseClicked="#openLoginPanel" prefHeight="42.0" prefWidth="186.0" style="-fx-background-color: #444444;">
                      <children>
                         <ImageView fitHeight="20.0" fitWidth="20.0" opacity="0.68" pickOnBounds="true" preserveRatio="true">
                            <image>
