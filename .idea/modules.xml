@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Cafeteria.iml" filepath="$PROJECT_DIR$/Cafeteria.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cafeteriaSolution.iml" filepath="$PROJECT_DIR$/cafeteriaSolution.iml" />
     </modules>
   </component>
 </project>
