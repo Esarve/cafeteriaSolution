@@ -2,6 +2,7 @@ package sample;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -19,12 +20,15 @@ import java.util.ResourceBundle;
 
 public class Dashboard implements Initializable {
 
+    /* FOR DATABASE AND ITEM FETCHING STUFFS */
+
     Main accessMain = new Main();
     Connection connection = DatabaseManager.DBconnect();
     PreparedStatement preparedStatement = null;
     ResultSet resultSet = null;
     public final ObservableList optionsforitems = FXCollections.observableArrayList();
-    public final ObservableList optionsforquantity = FXCollections.observableArrayList();
+
+    /* UI VARIABLES */
 
     @FXML
     private JFXComboBox<?> cb1;
@@ -49,44 +53,66 @@ public class Dashboard implements Initializable {
     private JFXComboBox<?> cb6;
 
     @FXML
-    private JFXButton order;
+    private JFXTextField qtty1;
+
+    @FXML
+    private JFXTextField qtty2;
+
+    @FXML
+    private JFXTextField qtty3;
+
+    @FXML
+    private JFXTextField qtty4;
+
+    @FXML
+    private JFXTextField qtty5;
+
+    @FXML
+    private JFXTextField qtty6;
 
     @FXML
     private Label total;
 
-    String selectedItem1;
-    String selectedItem2;
-    String selectedItem3;
-    String selectedItem4;
-    String selectedItem5;
-    String selectedItem6;
-    int price1;
-    int price2;
-    int price3;
-    int price4;
-    int price5;
-    int price6;
-    double totalbiill;
+
+    /* ORDER BUTTON ACTION */
 
     public void orderbuttonaction(ActionEvent event) {
 
-        selectedItem1 = cb1.getValue().toString();
-        selectedItem2 = cb2.getValue().toString();
-        selectedItem3 = cb3.getValue().toString();
-        selectedItem4 = cb4.getValue().toString();
-        selectedItem5 = cb5.getValue().toString();
-        selectedItem6 = cb6.getValue().toString();
-        price1 = getPrice(selectedItem1);
-        price2 = getPrice(selectedItem2);
-        price3 = getPrice(selectedItem3);
-        price4 = getPrice(selectedItem4);
-        price5 = getPrice(selectedItem5);
-        price6 = getPrice(selectedItem6);
+        /* Variables for setting items from combobox and textfield */
 
-        totalbiill = price1+price2+price3+price4+price5+price5;
+        String selectedItem1;
+        String selectedItem2;
+        String selectedItem3;
+        String selectedItem4;
+        String selectedItem5;
+        String selectedItem6;
+        int price1;
+        int price2;
+        int price3;
+        int price4;
+        int price5;
+        int price6;
+
+        double totalbiill;
+
+        selectedItem1 = getvaluefromcb1();  //fetches item from combobox 1
+        selectedItem2 = getvaluefromcb2();  //fetches item from combobox 2
+        selectedItem3 = getvaluefromcb3();  //fetches item from combobox 3
+        selectedItem4 = getvaluefromcb4();  //fetches item from combobox 4
+        selectedItem5 = getvaluefromcb5();  //fetches item from combobox 5
+        selectedItem6 = getvaluefromcb6();  //fetches item from combobox 6
+
+
+        // GETS PRICE FROM DATABASE AND QUANTITY FROM TEXT FIELD
+        price1 = getPrice(selectedItem1) * getQuantity1();
+        price2 = getPrice(selectedItem2) * getQuantity2();
+        price3 = getPrice(selectedItem3) * getQuantity3();
+        price4 = getPrice(selectedItem4) * getQuantity4();
+        price5 = getPrice(selectedItem5) * getQuantity5();
+        price6 = getPrice(selectedItem6) * getQuantity6();
+
+        totalbiill = price1+price2+price3+price4+price5+price6;
         total.setText(Double.toString(totalbiill));
-
-        System.out.println("The price is: "+price1);
 
     }
 
@@ -106,6 +132,8 @@ public class Dashboard implements Initializable {
         }
         return 0;
     }
+
+    /* POPULATES THE COMBOBOXES WHILE INITIALIZATION */
 
     public void fillcomboboxforItems(){
         try {
@@ -134,6 +162,112 @@ public class Dashboard implements Initializable {
         cb6.setItems(optionsforitems);
     }
 
+    /* Get values from Comboboxes and returns them as Strings */
+
+    private String getvaluefromcb1(){
+        try{
+            return cb1.getValue().toString();
+        }catch (Exception e){
+            return null;
+        }
+    }
+
+    private String getvaluefromcb2(){
+        try{
+           return cb2.getValue().toString();
+        }catch (Exception e){
+            return null;
+        }
+    }
+
+    private String getvaluefromcb3(){
+        try{
+            return cb3.getValue().toString();
+        }catch (Exception e){
+            return null;
+        }
+    }
+
+    private String getvaluefromcb4(){
+        try{
+            return cb4.getValue().toString();
+        }catch (Exception e){
+            return null;
+        }
+    }
+
+    private String getvaluefromcb5(){
+        try{
+            return cb5.getValue().toString();
+        }catch (Exception e){
+            return null;
+        }
+    }
+
+    private String getvaluefromcb6(){
+        try{
+            return cb6.getValue().toString();
+        }catch (Exception e){
+            return null;
+        }
+    }
+
+    /* Get values form the Textfields and returns them as Ints */
+
+    private int getQuantity1(){
+        try {
+            int qutty;
+            qutty = Integer.parseInt(qtty1.getText());
+            return qutty;
+
+        }catch (Exception e){
+            System.out.println(e);
+            return 1;
+        }
+    }
+
+    private int getQuantity2(){
+        try {
+            return Integer.parseInt(qtty2.getText());
+        }catch (Exception e){
+            return 1;
+        }
+    }
+
+    private int getQuantity3(){
+        try {
+            return Integer.parseInt(qtty3.getText());
+        }catch (Exception e){
+            return 1;
+        }
+    }
+
+    private int getQuantity4(){
+        try {
+            return Integer.parseInt(qtty4.getText());
+        }catch (Exception e){
+            return 1;
+        }
+    }
+
+    private int getQuantity5(){
+        try {
+            return Integer.parseInt(qtty5.getText());
+        }catch (Exception e){
+            return 1;
+        }
+    }
+
+    private int getQuantity6(){
+        try {
+            return Integer.parseInt(qtty6.getText());
+        }catch (Exception e){
+            return 1;
+        }
+    }
+
+
+    /* UI navigation methods */
 
     @FXML
     void openLoginPanel(MouseEvent event) throws IOException {
