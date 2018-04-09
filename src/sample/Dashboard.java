@@ -6,10 +6,16 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.net.URL;
@@ -113,6 +119,7 @@ public class Dashboard implements Initializable {
 
         totalbiill = price1+price2+price3+price4+price5+price6;
         total.setText(Double.toString(totalbiill));
+        showPopup("Done!");
 
     }
 
@@ -269,6 +276,34 @@ public class Dashboard implements Initializable {
         }
     }
 
+
+    private void showPopup(String msg){
+        VBox popup = new VBox();
+        popup.setPrefHeight(100);
+        popup.setPrefWidth(250);
+        JFXButton confirm =new JFXButton("OK");
+        confirm.setPrefSize(50,20);
+        confirm.setStyle("-fx-background-color:   #e86363; -fx-text-fill: #FFFFFF");
+        Label label = new Label(msg);
+        popup.setSpacing(30);
+        popup.setAlignment(Pos.CENTER);
+        popup.getChildren().add(label);
+        popup.getChildren().add(confirm);
+        confirm.setCancelButton(true);
+        Scene newScene = new Scene(popup);
+        Stage stage = new Stage(StageStyle.DECORATED);
+        stage.setScene(newScene);
+        stage.setResizable(false);
+        stage.setTitle("Message");
+        stage.show();
+        confirm.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                stage.close();
+            }
+        });
+
+    }
 
     /* UI navigation methods */
 

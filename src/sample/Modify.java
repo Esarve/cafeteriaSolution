@@ -2,7 +2,6 @@ package sample;
 
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
-import com.jfoenix.controls.JFXPopup;
 import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -137,8 +136,6 @@ public class Modify implements Initializable {
             preparedStatement.close();
             resultSet.close();
 
-            System.out.println("DONE!");
-
         }catch (Exception e){
             System.err.println(e);
         }
@@ -184,7 +181,6 @@ public class Modify implements Initializable {
             preparedStatement.executeUpdate();
             preparedStatement.close();
             resultSet.close();
-            System.out.println("Suppliers Added");
         }catch (Exception e){
             System.err.println(e);
         }
