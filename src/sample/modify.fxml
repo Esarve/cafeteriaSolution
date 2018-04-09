@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -194,6 +198,81 @@
                   </HBox>
                </children>
             </VBox>
+            <VBox layoutX="247.0" layoutY="68.0" prefHeight="103.0" prefWidth="590.0" style="-fx-border-color: #BDBDBD;">
+               <children>
+                  <HBox prefHeight="57.0" prefWidth="569.0" spacing="20.0">
+                     <children>
+                        <JFXTextField fx:id="code" prefHeight="25.0" prefWidth="91.0" promptText="Item Code">
+                           <font>
+                              <Font name="Segoe UI" size="12.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="name" prefHeight="25.0" prefWidth="113.0" promptText="Item Name">
+                           <font>
+                              <Font name="Segoe UI" size="12.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="qtty" prefHeight="25.0" prefWidth="104.0" promptText="Quantity">
+                           <font>
+                              <Font name="Segoe UI" size="12.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="price" prefHeight="25.0" prefWidth="122.0" promptText="Item pirce">
+                           <font>
+                              <Font name="Segoe UI" size="12.0" />
+                           </font>
+                        </JFXTextField>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="57.0" prefWidth="569.0" spacing="20.0">
+                     <children>
+                        <JFXComboBox fx:id="suppliers" prefHeight="25.0" prefWidth="122.0" promptText="Suppliers" />
+                        <JFXComboBox fx:id="type" promptText="Item type" />
+                        <JFXDatePicker fx:id="date" defaultColor="#e86363" promptText="Expire Date" />
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets left="10.0" top="10.0" />
+               </padding>
+            </VBox>
+            <JFXButton layoutX="247.0" layoutY="191.0" onAction="#addItems" prefHeight="42.0" prefWidth="104.0" style="-fx-background-color: #e86363;" text="Add new item" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <VBox layoutX="247.0" layoutY="368.0" prefHeight="69.0" prefWidth="590.0" style="-fx-border-color: #BDBDBD;">
+               <children>
+                  <HBox prefHeight="57.0" prefWidth="569.0" spacing="20.0">
+                     <children>
+                        <JFXTextField fx:id="suppname" prefHeight="25.0" prefWidth="91.0" promptText="Supplier Name">
+                           <font>
+                              <Font name="Segoe UI" size="12.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="suppcode" prefHeight="25.0" prefWidth="113.0" promptText="Supplier Code">
+                           <font>
+                              <Font name="Segoe UI" size="12.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXComboBox fx:id="typeS" promptText="Item type" />
+                        <JFXTextField fx:id="contact" prefHeight="25.0" prefWidth="187.0" promptText="Contact Number">
+                           <font>
+                              <Font name="Segoe UI" size="12.0" />
+                           </font>
+                        </JFXTextField>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets left="10.0" top="10.0" />
+               </padding>
+            </VBox>
+            <JFXButton layoutX="247.0" layoutY="463.0" onAction="#addSupplier" prefHeight="42.0" prefWidth="122.0" style="-fx-background-color: #e86363;" text="Add new Supplier" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="12.0" />
+               </font>
+            </JFXButton>
          </children>
       </Pane>
    </children>
