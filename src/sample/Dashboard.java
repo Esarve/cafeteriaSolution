@@ -277,7 +277,7 @@ public class Dashboard implements Initializable {
     }
 
 
-    private void showPopup(String msg){
+    public void showPopup(String msg){
         VBox popup = new VBox();
         popup.setPrefHeight(100);
         popup.setPrefWidth(250);

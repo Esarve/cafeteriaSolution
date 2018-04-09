@@ -135,7 +135,7 @@ public class Modify implements Initializable {
             preparedStatement.executeUpdate();
             preparedStatement.close();
             resultSet.close();
-
+            new Dashboard().showPopup("Item added Successfully!");
         }catch (Exception e){
             System.err.println(e);
         }
@@ -181,6 +181,7 @@ public class Modify implements Initializable {
             preparedStatement.executeUpdate();
             preparedStatement.close();
             resultSet.close();
+            new Dashboard().showPopup("Supplier Added!");
         }catch (Exception e){
             System.err.println(e);
         }
