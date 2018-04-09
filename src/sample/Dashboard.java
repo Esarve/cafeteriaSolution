@@ -22,6 +22,8 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 public class Dashboard implements Initializable {
@@ -98,6 +100,7 @@ public class Dashboard implements Initializable {
         int price4;
         int price5;
         int price6;
+        int totalItems;
 
         double totalbiill;
 
@@ -118,6 +121,9 @@ public class Dashboard implements Initializable {
         price6 = getPrice(selectedItem6) * getQuantity6();
 
         totalbiill = price1+price2+price3+price4+price5+price6;
+        totalItems = getQuantity1() + getQuantity2() + getQuantity3() + getQuantity4() + getQuantity5() + getQuantity6();
+
+        placeOrder((int)totalbiill, totalItems);
         total.setText(Double.toString(totalbiill));
         showPopup("Done!");
 
@@ -232,7 +238,7 @@ public class Dashboard implements Initializable {
 
         }catch (Exception e){
             System.out.println(e);
-            return 1;
+            return 0;
         }
     }
 
@@ -240,7 +246,7 @@ public class Dashboard implements Initializable {
         try {
             return Integer.parseInt(qtty2.getText());
         }catch (Exception e){
-            return 1;
+            return 0;
         }
     }
 
@@ -248,7 +254,7 @@ public class Dashboard implements Initializable {
         try {
             return Integer.parseInt(qtty3.getText());
         }catch (Exception e){
-            return 1;
+            return 0;
         }
     }
 
@@ -256,7 +262,7 @@ public class Dashboard implements Initializable {
         try {
             return Integer.parseInt(qtty4.getText());
         }catch (Exception e){
-            return 1;
+            return 0;
         }
     }
 
@@ -264,7 +270,7 @@ public class Dashboard implements Initializable {
         try {
             return Integer.parseInt(qtty5.getText());
         }catch (Exception e){
-            return 1;
+            return 0;
         }
     }
 
@@ -272,10 +278,50 @@ public class Dashboard implements Initializable {
         try {
             return Integer.parseInt(qtty6.getText());
         }catch (Exception e){
-            return 1;
+            return 0;
         }
     }
 
+    private void placeOrder(int price, int orders){
+        String sql = "Insert into orders values (?,?,?,?)";
+        LocalDate today = new java.sql.Date( new java.util.Date().getTime() ).toLocalDate();
+        java.sql.Date date = java.sql.Date.valueOf(today);
+        int orderID = getOrderID();
+        orderID++;
+        try {
+            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1,orderID);
+            preparedStatement.setDate(2,date);
+            preparedStatement.setInt(3,orders);
+            preparedStatement.setInt(4,price);
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+            resultSet.close();
+            new Dashboard().showPopup("Order Added!");
+        }catch (Exception e){
+            System.err.println(e);
+        }
+    }
+
+    private int getOrderID(){
+        String sql = "select order_id from orders order by order_id DESC limit 1";
+        try{
+            preparedStatement = connection.prepareStatement(sql);
+            resultSet=preparedStatement.executeQuery();
+            String output = null;
+            while (resultSet.next()){
+                output=resultSet.getString(1);
+            }
+            preparedStatement.close();
+            resultSet.close();
+
+            return Integer.parseInt(output);
+        }catch (Exception e) {
+            System.err.println(e);
+        }
+        return 0;
+
+    }
 
     public void showPopup(String msg){
         VBox popup = new VBox();
