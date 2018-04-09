@@ -66,7 +66,6 @@ public class ItemList implements Initializable {
     }
 
     public void loadDB(){
-        System.out.println("loaddb run");
         try{
             preparedStatement = connection.prepareStatement("SELECT  item.item_code, item.item_name, item.item_type, item_details.item_price, item_details.item_quantity, item_details.exp_date FROM `item_details`, `item` WHERE item.item_code=item_details.item_code ORDER BY item_code");
             resultSet=preparedStatement.executeQuery();

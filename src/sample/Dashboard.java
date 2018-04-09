@@ -126,6 +126,9 @@ public class Dashboard implements Initializable {
             while (resultSet.next()){
                 output=resultSet.getString(1);
             }
+            preparedStatement.close();
+            resultSet.close();
+
             return Integer.parseInt(output);
         }catch (Exception e) {
             System.err.println(e);
