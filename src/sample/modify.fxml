@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="592.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Modify">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="592.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Modify">
    <children>
       <Pane prefHeight="592.0" prefWidth="890.0" style="-fx-background-color: #FCFCFC;">
          <children>
@@ -204,22 +204,22 @@
                      <children>
                         <JFXTextField fx:id="code" prefHeight="25.0" prefWidth="91.0" promptText="Item Code">
                            <font>
-                              <Font name="Segoe UI" size="12.0" />
+                              <Font name="Segoe UI" size="14.0" />
                            </font>
                         </JFXTextField>
                         <JFXTextField fx:id="name" prefHeight="25.0" prefWidth="113.0" promptText="Item Name">
                            <font>
-                              <Font name="Segoe UI" size="12.0" />
+                              <Font name="Segoe UI" size="14.0" />
                            </font>
                         </JFXTextField>
                         <JFXTextField fx:id="qtty" prefHeight="25.0" prefWidth="104.0" promptText="Quantity">
                            <font>
-                              <Font name="Segoe UI" size="12.0" />
+                              <Font name="Segoe UI" size="14.0" />
                            </font>
                         </JFXTextField>
                         <JFXTextField fx:id="price" prefHeight="25.0" prefWidth="122.0" promptText="Item pirce">
                            <font>
-                              <Font name="Segoe UI" size="12.0" />
+                              <Font name="Segoe UI" size="14.0" />
                            </font>
                         </JFXTextField>
                      </children>
@@ -247,18 +247,18 @@
                      <children>
                         <JFXTextField fx:id="suppname" prefHeight="25.0" prefWidth="91.0" promptText="Supplier Name">
                            <font>
-                              <Font name="Segoe UI" size="12.0" />
+                              <Font name="Segoe UI" size="14.0" />
                            </font>
                         </JFXTextField>
                         <JFXTextField fx:id="suppcode" prefHeight="25.0" prefWidth="113.0" promptText="Supplier Code">
                            <font>
-                              <Font name="Segoe UI" size="12.0" />
+                              <Font name="Segoe UI" size="14.0" />
                            </font>
                         </JFXTextField>
                         <JFXComboBox fx:id="typeS" promptText="Item type" />
                         <JFXTextField fx:id="contact" prefHeight="25.0" prefWidth="187.0" promptText="Contact Number">
                            <font>
-                              <Font name="Segoe UI" size="12.0" />
+                              <Font name="Segoe UI" size="14.0" />
                            </font>
                         </JFXTextField>
                      </children>

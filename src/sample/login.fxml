@@ -13,9 +13,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="592.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="592.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LoginController">
    <children>
-      <Pane prefHeight="592.0" prefWidth="890.0" style="-fx-background-color: #333333;">
+      <Pane prefHeight="626.0" prefWidth="920.0" style="-fx-background-color: #333333;">
          <children>
             <VBox layoutX="292.0" layoutY="325.0" prefHeight="234.0" prefWidth="308.0">
                <children>
@@ -29,7 +29,7 @@
                               <Insets right="10.0" top="10.0" />
                            </HBox.margin>
                         </ImageView>
-                        <JFXTextField focusColor="#c3c3c3" labelFloat="true" prefHeight="39.0" prefWidth="350.0" promptText="USERNAME" style="-fx-text-inner-color: #e86363;" unFocusColor="#c3c3c3">
+                        <JFXTextField fx:id="username" focusColor="#c3c3c3" labelFloat="true" prefHeight="39.0" prefWidth="350.0" promptText="USERNAME" style="-fx-text-inner-color: #e86363;" unFocusColor="#c3c3c3">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -45,7 +45,7 @@
                            <HBox.margin>
                               <Insets right="10.0" top="10.0" />
                            </HBox.margin></ImageView>
-                        <JFXPasswordField focusColor="#c3c3c3" labelFloat="true" prefHeight="39.0" prefWidth="352.0" promptText="PASSWORD" style="-fx-text-inner-color: #e86363;" unFocusColor="#c3c3c3">
+                        <JFXPasswordField fx:id="passwd" focusColor="#c3c3c3" labelFloat="true" prefHeight="39.0" prefWidth="352.0" promptText="PASSWORD" style="-fx-text-inner-color: #e86363;" unFocusColor="#c3c3c3">
                            <font>
                               <Font size="18.0" />
                            </font>

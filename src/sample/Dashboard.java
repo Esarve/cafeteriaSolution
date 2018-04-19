@@ -23,17 +23,16 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.ResourceBundle;
 
 public class Dashboard implements Initializable {
 
     /* FOR DATABASE AND ITEM FETCHING STUFFS */
 
-    Main accessMain = new Main();
-    Connection connection = DatabaseManager.DBconnect();
-    PreparedStatement preparedStatement = null;
-    ResultSet resultSet = null;
+    private Main accessMain = new Main();
+    private Connection connection = DatabaseManager.DBconnect();
+    private PreparedStatement preparedStatement = null;
+    private ResultSet resultSet = null;
     public final ObservableList optionsforitems = FXCollections.observableArrayList();
 
     /* UI VARIABLES */
@@ -125,11 +124,11 @@ public class Dashboard implements Initializable {
 
         placeOrder((int)totalbiill, totalItems);
         total.setText(Double.toString(totalbiill));
-        showPopup("Done!");
+
 
     }
 
-    public int getPrice(String item){
+    private int getPrice(String item){
         String sql = "select item_price from item_details where item_code in (select item_code from item where item_name = ?)";
         try{
             preparedStatement = connection.prepareStatement(sql);
@@ -151,7 +150,7 @@ public class Dashboard implements Initializable {
 
     /* POPULATES THE COMBOBOXES WHILE INITIALIZATION */
 
-    public void fillcomboboxforItems(){
+    private void fillcomboboxforItems(){
         try {
             preparedStatement = connection.prepareStatement("select item_name from item");
             resultSet=preparedStatement.executeQuery();
