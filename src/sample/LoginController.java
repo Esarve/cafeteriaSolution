@@ -13,7 +13,7 @@ public class LoginController {
     JFXPasswordField passwd;
     @FXML
     public void openMainPanel(ActionEvent event) throws Exception {
-        if (username.getText().equalsIgnoreCase("admin") && passwd.getText().equalsIgnoreCase("admin")) {
+        if (username.getText().equalsIgnoreCase("") && passwd.getText().equalsIgnoreCase("")) {
             System.out.println(username.getText()+" "+passwd.getText());
             new Main().loadScene(Main.mainPanel);
         }

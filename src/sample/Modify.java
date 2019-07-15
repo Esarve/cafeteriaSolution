@@ -73,10 +73,10 @@ public class Modify implements Initializable {
 
     private void fillcomboboxforSuppliers(){
         try {
-            preparedStatement = connection.prepareStatement("select sup_name from suppliers");
+            preparedStatement = connection.prepareStatement("select supp_name from suppliers");
             resultSet=preparedStatement.executeQuery();
             while (resultSet.next()){
-                optionsforSuppliers.add(resultSet.getString("sup_name"));
+                optionsforSuppliers.add(resultSet.getString("supp_name"));
             }
             preparedStatement.close();
             resultSet.close();
@@ -87,7 +87,7 @@ public class Modify implements Initializable {
 
     private void fillcomboboxfortypes(){
         try {
-            preparedStatement = connection.prepareStatement("select type from suppliers");
+            preparedStatement = connection.prepareStatement("select DISTINCT type from suppliers");
             resultSet=preparedStatement.executeQuery();
             while (resultSet.next()){
                 optionsfortypes.add(resultSet.getString("type"));
@@ -142,7 +142,7 @@ public class Modify implements Initializable {
     }
 
     private int getSuppID(String supplier){
-        String sql = "select supp_id from suppliers where sup_name=?";
+        String sql = "select supp_id from suppliers where supp_name=?";
         try{
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1,supplier);

@@ -59,13 +59,14 @@ public class Suppliers implements Initializable {
                 data.add(new Supplier_details(
                 resultSet.getString("supp_id"),
                 resultSet.getString("type"),
-                resultSet.getString("sup_name"),
+                resultSet.getString("supp_name"),
                 resultSet.getString("contact")
                 ));
                 suppliers.setItems(data);
             }
         }catch (Exception e){
             System.err.println(e);
+            System.err.println("Faild To LOAD suppliers");
         }
     }
 
