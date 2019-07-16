@@ -228,7 +228,7 @@
                      <children>
                         <JFXComboBox fx:id="suppliers" prefHeight="25.0" prefWidth="122.0" promptText="Suppliers" />
                         <JFXComboBox fx:id="type" promptText="Item type" />
-                        <JFXDatePicker fx:id="date" defaultColor="#e86363" promptText="Expire Date" />
+                        <JFXDatePicker fx:id="order_date" defaultColor="#e86363" promptText="Expire Date" />
                      </children>
                   </HBox>
                </children>

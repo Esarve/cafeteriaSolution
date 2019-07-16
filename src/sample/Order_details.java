@@ -4,16 +4,16 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class Order_details {
-    private StringProperty order_id;
-    private StringProperty date;
-    private StringProperty total_items;
-    private StringProperty total_price;
+    private final StringProperty order_id;
+    private final StringProperty order_date;
+    private final StringProperty order_quantity;
+    private final StringProperty price;
 
-    public Order_details(String order_id, String date, String total_items, String total_price) {
+    public Order_details(String order_id, String order_date, String order_quantity, String price) {
         this.order_id = new SimpleStringProperty(order_id);
-        this.date = new SimpleStringProperty(date);
-        this.total_items = new SimpleStringProperty(total_items);
-        this.total_price = new SimpleStringProperty(total_price);
+        this.order_date = new SimpleStringProperty(order_date);
+        this.order_quantity = new SimpleStringProperty(order_quantity);
+        this.price = new SimpleStringProperty(price);
     }
 
     public String getOrder_id() {
@@ -28,39 +28,39 @@ public class Order_details {
         this.order_id.set(order_id);
     }
 
-    public String getDate() {
-        return date.get();
+    public String getOrder_date() {
+        return order_date.get();
     }
 
-    public StringProperty dateProperty() {
-        return date;
+    public StringProperty order_dateProperty() {
+        return order_date;
     }
 
-    public void setDate(String date) {
-        this.date.set(date);
+    public void setOrder_date(String order_date) {
+        this.order_date.set(order_date);
     }
 
-    public String getTotal_items() {
-        return total_items.get();
+    public String getOrder_quantity() {
+        return order_quantity.get();
     }
 
-    public StringProperty total_itemsProperty() {
-        return total_items;
+    public StringProperty order_quantityProperty() {
+        return order_quantity;
     }
 
-    public void setTotal_items(String total_items) {
-        this.total_items.set(total_items);
+    public void setOrder_quantity(String order_quantity) {
+        this.order_quantity.set(order_quantity);
     }
 
-    public String getTotal_price() {
-        return total_price.get();
+    public String getPrice() {
+        return price.get();
     }
 
-    public StringProperty total_priceProperty() {
-        return total_price;
+    public StringProperty priceProperty() {
+        return price;
     }
 
-    public void setTotal_price(String total_price) {
-        this.total_price.set(total_price);
+    public void setPrice(String price) {
+        this.price.set(price);
     }
 }

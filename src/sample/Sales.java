@@ -41,11 +41,11 @@ public class Sales implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        code.setCellValueFactory(new PropertyValueFactory<>("order_id"));
-        date.setCellValueFactory(new PropertyValueFactory<>("date"));
-        orders.setCellValueFactory(new PropertyValueFactory<>("total_item"));
-        price.setCellValueFactory(new PropertyValueFactory<>("total_price"));
         initDB();
+        code.setCellValueFactory(new PropertyValueFactory<>("order_id"));
+        date.setCellValueFactory(new PropertyValueFactory<>("order_date"));
+        orders.setCellValueFactory(new PropertyValueFactory<>("order_quantity"));
+        price.setCellValueFactory(new PropertyValueFactory<>("price"));
     }
 
     private void initDB(){
@@ -54,10 +54,10 @@ public class Sales implements Initializable {
             resultSet=preparedStatement.executeQuery();
             while (resultSet.next()){
                 data.add(new Order_details(
-                        resultSet.getString("order_id"),
-                        resultSet.getString("date"),
-                        resultSet.getString("total_items"),
-                        resultSet.getString("total_price")
+                        resultSet.getString(1),
+                        resultSet.getString(2),
+                        resultSet.getString(3),
+                        resultSet.getString(4)
                 ));
                 itemlist.setItems(data);
             }
@@ -66,6 +66,7 @@ public class Sales implements Initializable {
 
         }catch (Exception e){
             System.err.println(e);
+            System.err.println("Failed to load Daily Sales form Database");
         }
     }
 
