@@ -12,6 +12,9 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -28,104 +31,90 @@ import java.util.ResourceBundle;
 public class Dashboard implements Initializable {
 
     /* FOR DATABASE AND ITEM FETCHING STUFFS */
-
+    private boolean statelock = false;
     private Main accessMain = new Main();
     private Connection connection = DatabaseManager.DBconnect();
     private PreparedStatement preparedStatement = null;
     private ResultSet resultSet = null;
-    public final ObservableList optionsforitems = FXCollections.observableArrayList();
+    private final ObservableList optionsforitems = FXCollections.observableArrayList();
+    private final ObservableList<Order> order = FXCollections.observableArrayList();
+    private int finalPrice;
+    private int totalQuantity;
 
     /* UI VARIABLES */
 
     @FXML
     private JFXComboBox<?> cb1;
 
-
-    @FXML
-    private JFXComboBox<?> cb2;
-
-
-    @FXML
-    private JFXComboBox<?> cb3;
-
-    @FXML
-    private JFXComboBox<?> cb4;
-
-
-    @FXML
-    private JFXComboBox<?> cb5;
-
-
-    @FXML
-    private JFXComboBox<?> cb6;
-
     @FXML
     private JFXTextField qtty1;
 
     @FXML
-    private JFXTextField qtty2;
-
-    @FXML
-    private JFXTextField qtty3;
-
-    @FXML
-    private JFXTextField qtty4;
-
-    @FXML
-    private JFXTextField qtty5;
-
-    @FXML
-    private JFXTextField qtty6;
-
-    @FXML
     private Label total;
 
+    @FXML
+    private TableView<Order> orderlist;
+
+    @FXML
+    private TableColumn<Order, String> item;
+
+    @FXML
+    private TableColumn<Order, Integer> quantity;
+
+    @FXML
+    private TableColumn<Order, Integer> totalPrice;
+
+    @FXML
+    private TableColumn<Order, Integer> price;
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        fillcomboboxforItems();
+        cb1.setItems(optionsforitems);
+        item.setCellValueFactory(new PropertyValueFactory<>("item"));
+        price.setCellValueFactory(new PropertyValueFactory<>("price"));
+        quantity.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        totalPrice.setCellValueFactory(new PropertyValueFactory<>("totalPrice"));
+        //orderlist.setItems(order);
+    }
+
+    public void addToOrder(ActionEvent actionEvent) {
+        statelock = true;
+        String selectedItem;
+        int itemPrice;
+        int quantity;
+        int totalPrice;
+        selectedItem = getvaluefromcb1();
+        itemPrice = getPrice(selectedItem);
+        quantity = getQuantity1();
+        totalPrice = itemPrice * quantity;
+        totalQuantity += quantity;
+        finalPrice += totalPrice;
+        order.add(
+                new Order(selectedItem, itemPrice, quantity, totalPrice)
+        );
+        orderlist.setItems(order);
+    }
 
     /* ORDER BUTTON ACTION */
 
     public void orderbuttonaction(ActionEvent event) {
-
-        /* Variables for setting items from combobox and textfield */
-
-        String selectedItem1;
-        String selectedItem2;
-        String selectedItem3;
-        String selectedItem4;
-        String selectedItem5;
-        String selectedItem6;
-        int price1;
-        int price2;
-        int price3;
-        int price4;
-        int price5;
-        int price6;
         int totalItems;
-
         double totalbiill;
-
-        selectedItem1 = getvaluefromcb1();  //fetches item from combobox 1
-        selectedItem2 = getvaluefromcb2();  //fetches item from combobox 2
-        selectedItem3 = getvaluefromcb3();  //fetches item from combobox 3
-        selectedItem4 = getvaluefromcb4();  //fetches item from combobox 4
-        selectedItem5 = getvaluefromcb5();  //fetches item from combobox 5
-        selectedItem6 = getvaluefromcb6();  //fetches item from combobox 6
-
-
-        // GETS PRICE FROM DATABASE AND QUANTITY FROM TEXT FIELD
-        price1 = getPrice(selectedItem1) * getQuantity1();
-        price2 = getPrice(selectedItem2) * getQuantity2();
-        price3 = getPrice(selectedItem3) * getQuantity3();
-        price4 = getPrice(selectedItem4) * getQuantity4();
-        price5 = getPrice(selectedItem5) * getQuantity5();
-        price6 = getPrice(selectedItem6) * getQuantity6();
-
-        totalbiill = price1+price2+price3+price4+price5+price6;
-        totalItems = getQuantity1() + getQuantity2() + getQuantity3() + getQuantity4() + getQuantity5() + getQuantity6();
+        totalbiill = finalPrice;
+        totalItems = totalQuantity;
 
         placeOrder((int)totalbiill, totalItems);
         total.setText(Double.toString(totalbiill));
+        statelock = false;
+    }
 
-
+    public void clearOrder(){
+        orderlist.getItems().clear();
+        finalPrice = 0;
+        totalQuantity = 0;
+        qtty1.clear();
+        statelock = false;
     }
 
     private int getPrice(String item){
@@ -166,62 +155,13 @@ public class Dashboard implements Initializable {
     }
 
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        fillcomboboxforItems();
-        cb1.setItems(optionsforitems);
-        cb2.setItems(optionsforitems);
-        cb3.setItems(optionsforitems);
-        cb4.setItems(optionsforitems);
-        cb5.setItems(optionsforitems);
-        cb6.setItems(optionsforitems);
-    }
+
 
     /* Get values from Comboboxes and returns them as Strings */
 
     private String getvaluefromcb1(){
         try{
             return cb1.getValue().toString();
-        }catch (Exception e){
-            return null;
-        }
-    }
-
-    private String getvaluefromcb2(){
-        try{
-           return cb2.getValue().toString();
-        }catch (Exception e){
-            return null;
-        }
-    }
-
-    private String getvaluefromcb3(){
-        try{
-            return cb3.getValue().toString();
-        }catch (Exception e){
-            return null;
-        }
-    }
-
-    private String getvaluefromcb4(){
-        try{
-            return cb4.getValue().toString();
-        }catch (Exception e){
-            return null;
-        }
-    }
-
-    private String getvaluefromcb5(){
-        try{
-            return cb5.getValue().toString();
-        }catch (Exception e){
-            return null;
-        }
-    }
-
-    private String getvaluefromcb6(){
-        try{
-            return cb6.getValue().toString();
         }catch (Exception e){
             return null;
         }
@@ -237,46 +177,6 @@ public class Dashboard implements Initializable {
 
         }catch (Exception e){
             System.out.println(e);
-            return 0;
-        }
-    }
-
-    private int getQuantity2(){
-        try {
-            return Integer.parseInt(qtty2.getText());
-        }catch (Exception e){
-            return 0;
-        }
-    }
-
-    private int getQuantity3(){
-        try {
-            return Integer.parseInt(qtty3.getText());
-        }catch (Exception e){
-            return 0;
-        }
-    }
-
-    private int getQuantity4(){
-        try {
-            return Integer.parseInt(qtty4.getText());
-        }catch (Exception e){
-            return 0;
-        }
-    }
-
-    private int getQuantity5(){
-        try {
-            return Integer.parseInt(qtty5.getText());
-        }catch (Exception e){
-            return 0;
-        }
-    }
-
-    private int getQuantity6(){
-        try {
-            return Integer.parseInt(qtty6.getText());
-        }catch (Exception e){
             return 0;
         }
     }
@@ -354,32 +254,57 @@ public class Dashboard implements Initializable {
 
     @FXML
     void openLoginPanel(MouseEvent event) throws IOException {
-        accessMain.loadScene(Main.loginPanel);
+        if (!statelock){
+            accessMain.loadScene(Main.loginPanel);
+        }else{
+            showPopup("Confirm Your order or clear the order first.");
+        }
     }
 
     @FXML
     void openItemPanel(MouseEvent event) throws IOException {
-        accessMain.loadScene(Main.itemPanel);
+        if (!statelock){
+            accessMain.loadScene(Main.itemPanel);
+        }else{
+            showPopup("Confirm Your order or clear the order first.");
+        }
     }
 
     @FXML
     void openSuppliers(MouseEvent event) throws IOException{
-        accessMain.loadScene(Main.suppliersPanel);
+        if (!statelock){
+            accessMain.loadScene(Main.suppliersPanel);
+        }else{
+            showPopup("Confirm Your order or clear the order first.");
+        }
     }
 
     @FXML
     void openExpired(MouseEvent event) throws IOException{
-        accessMain.loadScene(Main.expiredPanel);
+        if (!statelock){
+            accessMain.loadScene(Main.expiredPanel);
+        }else{
+            showPopup("Confirm Your order or clear the order first.");
+        }
     }
 
     @FXML
     void openModify(MouseEvent event) throws IOException {
-        accessMain.loadScene(Main.modifyPanel);
+        if (!statelock){
+            accessMain.loadScene(Main.modifyPanel);
+        }else{
+            showPopup("Confirm Your order or clear the order first.");
+        }
     }
 
     @FXML
     void openSales(MouseEvent event) throws IOException {
-        accessMain.loadScene(Main.salesPanel);
+        if (!statelock){
+            accessMain.loadScene(Main.salesPanel);
+        }else{
+            showPopup("Confirm Your order or clear the order first.");
+        }
     }
+
 
 }

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXCheckBox?>
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -14,11 +15,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="592.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Dashboard">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="592.0" prefWidth="890.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Dashboard">
    <children>
       <Pane prefHeight="592.0" prefWidth="890.0" style="-fx-background-color: #FCFCFC;">
          <children>
-            <VBox alignment="CENTER" layoutX="208.0" layoutY="140.0" prefHeight="312.0" prefWidth="420.0" style="-fx-border-color: #BDBDBD;">
+            <VBox alignment="TOP_CENTER" layoutX="208.0" layoutY="140.0" prefHeight="312.0" prefWidth="420.0" style="-fx-border-color: #BDBDBD;">
                <children>
                   <HBox alignment="CENTER" prefHeight="28.0" prefWidth="362.0" spacing="80.0">
                      <children>
@@ -30,7 +31,7 @@
                               <Insets left="20.0" right="20.0" />
                            </HBox.margin>
                         </Label>
-                        <Label prefHeight="18.0" prefWidth="62.0" text="Quantity">
+                        <Label prefHeight="18.0" prefWidth="134.0" text="Quantity">
                            <font>
                               <Font name="Segoe UI" size="14.0" />
                            </font>
@@ -45,133 +46,30 @@
                         <Insets top="5.0" />
                      </VBox.margin>
                      <children>
-                        <JFXCheckBox prefHeight="18.0" prefWidth="20.0" text="1.">
-                           <HBox.margin>
-                              <Insets left="10.0" />
-                           </HBox.margin>
-                        </JFXCheckBox>
-                        <JFXComboBox fx:id="cb1" prefHeight="25.0" prefWidth="131.0">
+                        <JFXComboBox fx:id="cb1" prefHeight="25.0" prefWidth="139.0">
                            <HBox.margin>
                               <Insets left="13.0" />
                            </HBox.margin>
                         </JFXComboBox>
-                        <JFXTextField fx:id="qtty1" prefHeight="0.0" prefWidth="60.0">
+                        <JFXTextField fx:id="qtty1" prefHeight="25.0" prefWidth="73.0">
                            <HBox.margin>
-                              <Insets left="75.0" />
+                              <Insets left="75.0" right="40.0" />
                            </HBox.margin>
                         </JFXTextField>
+                        <JFXButton onAction="#addToOrder" prefHeight="25.0" prefWidth="44.0" style="-fx-background-color: #e86363;" text="Add" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></JFXButton>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="362.0">
-                     <VBox.margin>
-                        <Insets top="5.0" />
-                     </VBox.margin>
-                     <children>
-                        <JFXCheckBox prefWidth="20.0" text="2.">
-                           <HBox.margin>
-                              <Insets left="10.0" />
-                           </HBox.margin>
-                        </JFXCheckBox>
-                        <JFXComboBox fx:id="cb2" prefHeight="25.0" prefWidth="131.0">
-                           <HBox.margin>
-                              <Insets left="13.0" />
-                           </HBox.margin>
-                        </JFXComboBox>
-                        <JFXTextField fx:id="qtty2" prefHeight="0.0" prefWidth="60.0">
-                           <HBox.margin>
-                              <Insets left="75.0" />
-                           </HBox.margin>
-                        </JFXTextField>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="362.0" style="-fx-background-color: #EEEEEE;">
-                     <VBox.margin>
-                        <Insets top="5.0" />
-                     </VBox.margin>
-                     <children>
-                        <JFXCheckBox prefWidth="20.0" text="3.">
-                           <HBox.margin>
-                              <Insets left="10.0" />
-                           </HBox.margin>
-                        </JFXCheckBox>
-                        <JFXComboBox fx:id="cb3" prefHeight="25.0" prefWidth="131.0">
-                           <HBox.margin>
-                              <Insets left="13.0" />
-                           </HBox.margin>
-                        </JFXComboBox>
-                        <JFXTextField fx:id="qtty3" prefHeight="0.0" prefWidth="60.0">
-                           <HBox.margin>
-                              <Insets left="75.0" />
-                           </HBox.margin>
-                        </JFXTextField>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="362.0">
-                     <VBox.margin>
-                        <Insets top="5.0" />
-                     </VBox.margin>
-                     <children>
-                        <JFXCheckBox prefWidth="20.0" text="4.">
-                           <HBox.margin>
-                              <Insets left="10.0" />
-                           </HBox.margin>
-                        </JFXCheckBox>
-                        <JFXComboBox fx:id="cb4" prefHeight="25.0" prefWidth="131.0">
-                           <HBox.margin>
-                              <Insets left="13.0" />
-                           </HBox.margin>
-                        </JFXComboBox>
-                        <JFXTextField fx:id="qtty4" prefHeight="0.0" prefWidth="60.0">
-                           <HBox.margin>
-                              <Insets left="75.0" />
-                           </HBox.margin>
-                        </JFXTextField>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="60.0" style="-fx-background-color: #EEEEEE;">
-                     <VBox.margin>
-                        <Insets top="5.0" />
-                     </VBox.margin>
-                     <children>
-                        <JFXCheckBox prefWidth="20.0" text="5.">
-                           <HBox.margin>
-                              <Insets left="10.0" />
-                           </HBox.margin>
-                        </JFXCheckBox>
-                        <JFXComboBox fx:id="cb5" prefHeight="25.0" prefWidth="131.0">
-                           <HBox.margin>
-                              <Insets left="13.0" />
-                           </HBox.margin>
-                        </JFXComboBox>
-                        <JFXTextField fx:id="qtty5" prefHeight="25.0" prefWidth="60.0">
-                           <HBox.margin>
-                              <Insets left="75.0" />
-                           </HBox.margin>
-                        </JFXTextField>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="362.0">
-                     <VBox.margin>
-                        <Insets top="5.0" />
-                     </VBox.margin>
-                     <children>
-                        <JFXCheckBox prefWidth="20.0" text="6.">
-                           <HBox.margin>
-                              <Insets left="10.0" />
-                           </HBox.margin>
-                        </JFXCheckBox>
-                        <JFXComboBox fx:id="cb6" prefHeight="25.0" prefWidth="131.0">
-                           <HBox.margin>
-                              <Insets left="13.0" />
-                           </HBox.margin>
-                        </JFXComboBox>
-                        <JFXTextField fx:id="qtty6" prefHeight="0.0" prefWidth="60.0">
-                           <HBox.margin>
-                              <Insets left="75.0" />
-                           </HBox.margin>
-                        </JFXTextField>
-                     </children>
-                  </HBox>
+                  <TableView fx:id="orderlist" prefHeight="247.0" prefWidth="418.0">
+                    <columns>
+                      <TableColumn fx:id="item" prefWidth="118.0" text="Item" />
+                        <TableColumn fx:id="price" prefWidth="104.0" text="Item Price" />
+                      <TableColumn fx:id="quantity" prefWidth="68.0" text="Quantity" />
+                        <TableColumn fx:id="totalPrice" prefWidth="127.0" text="Total Price" />
+                    </columns>
+                  </TableView>
                </children></VBox>
             <VBox alignment="CENTER" layoutX="671.0" layoutY="141.0" prefHeight="200.0" prefWidth="186.0" spacing="50.0" style="-fx-border-color: #BDBDBD;">
                <children>
@@ -187,7 +85,12 @@
                   </Label>
                </children>
             </VBox>
-            <JFXButton fx:id="order" layoutX="701.0" layoutY="409.0" onAction="#orderbuttonaction" prefHeight="44.0" prefWidth="127.0" style="-fx-background-color: #e86363;" text="Place Order" textFill="WHITE">
+            <JFXButton fx:id="order" layoutX="701.0" layoutY="367.0" onAction="#orderbuttonaction" prefHeight="44.0" prefWidth="127.0" style="-fx-background-color: #e86363;" text="Place Order" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Black" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="701.0" layoutY="423.0" onAction="#clearOrder" prefHeight="44.0" prefWidth="127.0" style="-fx-background-color: #e86363;" text="Clear Order" textFill="WHITE">
                <font>
                   <Font name="Segoe UI Black" size="18.0" />
                </font>
