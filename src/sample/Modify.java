@@ -56,7 +56,7 @@ public class Modify implements Initializable {
     private JFXTextField suppname;
 
     @FXML
-    private JFXComboBox<?> typeS;
+    private JFXTextField supType;
 
     @FXML
     private JFXTextField contact;
@@ -64,12 +64,16 @@ public class Modify implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        initialize();
+    }
+
+    private void initialize(){
         fillcomboboxforSuppliers();
         suppliers.setItems(optionsforSuppliers);
         fillcomboboxfortypes();
         type.setItems(optionsfortypes);
-        typeS.setItems(optionsfortypes);
     }
+
 
     private void fillcomboboxforSuppliers(){
         try {
@@ -165,7 +169,7 @@ public class Modify implements Initializable {
     void addSupplier(ActionEvent event) {
         String name = suppname.getText();
         int code = Integer.parseInt(suppcode.getText());
-        String type = typeS.getValue().toString();
+        String type = supType.getText();
         String number = contact.getText();
         suppliersToDB(name,code,type,number);
     }
@@ -182,6 +186,7 @@ public class Modify implements Initializable {
             preparedStatement.close();
             resultSet.close();
             new Dashboard().showPopup("Supplier Added!");
+            initialize();
         }catch (Exception e){
             System.err.println(e);
         }

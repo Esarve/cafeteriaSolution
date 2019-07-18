@@ -25,7 +25,11 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class Dashboard implements Initializable {
@@ -40,7 +44,7 @@ public class Dashboard implements Initializable {
     private final ObservableList<Order> order = FXCollections.observableArrayList();
     private int finalPrice;
     private int totalQuantity;
-
+    private int orderNumber=0;
     /* UI VARIABLES */
 
     @FXML
@@ -75,8 +79,9 @@ public class Dashboard implements Initializable {
         price.setCellValueFactory(new PropertyValueFactory<>("price"));
         quantity.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         totalPrice.setCellValueFactory(new PropertyValueFactory<>("totalPrice"));
-        //orderlist.setItems(order);
     }
+
+    // add to order button action
 
     public void addToOrder(ActionEvent actionEvent) {
         statelock = true;
@@ -94,6 +99,7 @@ public class Dashboard implements Initializable {
                 new Order(selectedItem, itemPrice, quantity, totalPrice)
         );
         orderlist.setItems(order);
+        orderNumber++;
     }
 
     /* ORDER BUTTON ACTION */
@@ -103,19 +109,86 @@ public class Dashboard implements Initializable {
         double totalbiill;
         totalbiill = finalPrice;
         totalItems = totalQuantity;
-
+        updateNewQuantity();
         placeOrder((int)totalbiill, totalItems);
         total.setText(Double.toString(totalbiill));
         statelock = false;
     }
 
+    private void updateNewQuantity(){
+        String item;
+        int quantity;
+        String sql;
+        for (int i = 0 ; i < orderNumber; i++){
+            item = this.item.getCellObservableValue(i).getValue();
+            quantity = getQuantityFromDB(item) - this.quantity.getCellObservableValue(i).getValue();
+            try {
+                sql = "UPDATE item_details SET item_quantity ="+quantity+" WHERE item_code in (select item_code from item where item_name = ?)";
+                preparedStatement = connection.prepareStatement(sql);
+                preparedStatement.setString(1,item);
+                preparedStatement.executeUpdate();
+            }catch (SQLException e){
+                System.err.println(e);
+                System.err.println("ERROR UPDATING DATA");
+            }
+        }
+    }
+
+
+    // adds the order info into the database
+
+    private void placeOrder(int price, int orders){
+        String sql = "Insert into orders values (?,?,?,?)";
+        LocalDate today = new java.sql.Date( new java.util.Date().getTime() ).toLocalDate();
+        java.sql.Date date = java.sql.Date.valueOf(today);
+        int orderID = getOrderID();
+        orderID++;
+        try {
+            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1,orderID);
+            preparedStatement.setDate(2,date);
+            preparedStatement.setInt(3,orders);
+            preparedStatement.setInt(4,price);
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+            resultSet.close();
+            new Dashboard().showPopup("Order Added!");
+        }catch (Exception e){
+            System.err.println(e);
+        }
+    }
+
+    // Clear button action
     public void clearOrder(){
         orderlist.getItems().clear();
         finalPrice = 0;
         totalQuantity = 0;
         qtty1.clear();
         statelock = false;
+        orderNumber = 0;
     }
+
+    private int getQuantityFromDB(String item){
+        String sql = "select item_quantity from item_details where item_code in (select item_code from item where item_name = ?)";
+        try{
+            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1,item);
+            resultSet=preparedStatement.executeQuery();
+            String output = null;
+            while (resultSet.next()){
+                output=resultSet.getString(1);
+            }
+            preparedStatement.close();
+            resultSet.close();
+
+            return Integer.parseInt(output);
+        }catch (Exception e) {
+            System.err.println(e);
+        }
+        return 0;
+    }
+
+    // fetches price from the Database
 
     private int getPrice(String item){
         String sql = "select item_price from item_details where item_code in (select item_code from item where item_name = ?)";
@@ -137,7 +210,7 @@ public class Dashboard implements Initializable {
         return 0;
     }
 
-    /* POPULATES THE COMBOBOXES WHILE INITIALIZATION */
+    /* POPULATES THE COMBOBOXE WHILE INITIALIZATION */
 
     private void fillcomboboxforItems(){
         try {
@@ -153,9 +226,6 @@ public class Dashboard implements Initializable {
         }
 
     }
-
-
-
 
     /* Get values from Comboboxes and returns them as Strings */
 
@@ -181,27 +251,7 @@ public class Dashboard implements Initializable {
         }
     }
 
-    private void placeOrder(int price, int orders){
-        String sql = "Insert into orders values (?,?,?,?)";
-        LocalDate today = new java.sql.Date( new java.util.Date().getTime() ).toLocalDate();
-        java.sql.Date date = java.sql.Date.valueOf(today);
-        int orderID = getOrderID();
-        orderID++;
-        try {
-            preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setInt(1,orderID);
-            preparedStatement.setDate(2,date);
-            preparedStatement.setInt(3,orders);
-            preparedStatement.setInt(4,price);
-            preparedStatement.executeUpdate();
-            preparedStatement.close();
-            resultSet.close();
-            new Dashboard().showPopup("Order Added!");
-        }catch (Exception e){
-            System.err.println(e);
-        }
-    }
-
+    // generates and order ID
     private int getOrderID(){
         String sql = "select order_id from orders order by order_id DESC limit 1";
         try{
@@ -219,8 +269,9 @@ public class Dashboard implements Initializable {
             System.err.println(e);
         }
         return 0;
-
     }
+
+    // For displaying POPUPS
 
     public void showPopup(String msg){
         VBox popup = new VBox();
