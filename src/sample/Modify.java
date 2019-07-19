@@ -47,7 +47,7 @@ public class Modify implements Initializable {
     private JFXComboBox<?> type;
 
     @FXML
-    private JFXDatePicker date;
+    private JFXDatePicker order_date;
 
     @FXML
     private JFXTextField suppcode;
@@ -77,7 +77,7 @@ public class Modify implements Initializable {
 
     private void fillcomboboxforSuppliers(){
         try {
-            preparedStatement = connection.prepareStatement("select supp_name from suppliers");
+            preparedStatement = connection.prepareStatement("select DISTINCT supp_name from suppliers");
             resultSet=preparedStatement.executeQuery();
             while (resultSet.next()){
                 optionsforSuppliers.add(resultSet.getString("supp_name"));
@@ -111,7 +111,8 @@ public class Modify implements Initializable {
         int itemQtty = Integer.parseInt(qtty.getText());
         String itemSupp = suppliers.getValue().toString();
         String itemType = type.getValue().toString();
-        LocalDate exp = date.getValue();
+        System.out.println(order_date.getValue().toString());
+        LocalDate exp = order_date.getValue();
 
         itemToDB(itemName,itemCode,itemPrice,itemQtty,itemSupp,itemType,exp);
 

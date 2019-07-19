@@ -86,20 +86,27 @@ public class Dashboard implements Initializable {
     public void addToOrder(ActionEvent actionEvent) {
         statelock = true;
         String selectedItem;
+        selectedItem = getvaluefromcb1();
         int itemPrice;
         int quantity;
         int totalPrice;
-        selectedItem = getvaluefromcb1();
-        itemPrice = getPrice(selectedItem);
+        int remaining = getQuantityFromDB(selectedItem);
         quantity = getQuantity1();
-        totalPrice = itemPrice * quantity;
-        totalQuantity += quantity;
-        finalPrice += totalPrice;
-        order.add(
-                new Order(selectedItem, itemPrice, quantity, totalPrice)
-        );
-        orderlist.setItems(order);
-        orderNumber++;
+        if (remaining >= quantity){
+            itemPrice = getPrice(selectedItem);
+
+            totalPrice = itemPrice * quantity;
+            totalQuantity += quantity;
+            finalPrice += totalPrice;
+            order.add(
+                    new Order(selectedItem, itemPrice, quantity, totalPrice)
+            );
+            orderlist.setItems(order);
+            orderNumber++;
+        }else{
+            showPopup("Order number is more than remaining!");
+        }
+
     }
 
     /* ORDER BUTTON ACTION */
